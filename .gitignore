@@ -4,6 +4,7 @@
 /managed_components/
 /sdkconfig*
 !/sdkconfig.defaults
+/ota_discovery/
 
 # Local secrets and credentials
 .env
