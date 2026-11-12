@@ -1,0 +1,11 @@
+menu "Wi-Fi connection"
+
+    config APP_WIFI_SSID
+        string "Wi-Fi SSID"
+        default ""
+
+    config APP_WIFI_PASSWORD
+        string "Wi-Fi password"
+        default ""
+
+endmenu

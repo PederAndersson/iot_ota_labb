@@ -1,0 +1,28 @@
+# ESP-IDF build output and local configuration
+/build/
+/build-*/
+/managed_components/
+/sdkconfig*
+!/sdkconfig.defaults
+
+# Local secrets and credentials
+.env
+.env.*
+!.env.example
+*secret*
+*credential*
+*.pem
+*.key
+*.p12
+*.pfx
+*.der
+*.jks
+*.keystore
+
+# Editor and Python cache files
+/.cache/
+/.vscode/
+/.idea/
+__pycache__/
+*.py[cod]
+*.log

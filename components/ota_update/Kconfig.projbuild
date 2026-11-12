@@ -1,0 +1,18 @@
+menu "OTA lab"
+
+    config APP_OTA_URL
+        string "Firmware URL override (HTTP)"
+        default ""
+        help
+            Leave empty to find the lab server automatically by UDP broadcast.
+            An explicit URL such as http://192.168.1.10:8000/OTA_labb_code.bin
+            can be used if the network blocks broadcast discovery.
+
+    config APP_OTA_POLL_INTERVAL_SECONDS
+        int "Check interval (seconds)"
+        range 10 3600
+        default 60
+        help
+            How often to check the server for a new firmware image.
+
+endmenu
