@@ -1,8 +1,0 @@
-services:
-  ota-discovery:
-    image: python:3.12-alpine
-    network_mode: host
-    command: ["python", "-u", "/app/discovery.py"]
-    volumes:
-      - ./discovery.py:/app/discovery.py:ro
-    restart: unless-stopped
