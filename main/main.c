@@ -4,7 +4,9 @@
 #include "ota_update.h"
 #include "wifi_connect.h"
 
-#define LED_PIN GPIO_NUM_23
+#define LED_PIN_RED GPIO_NUM_23
+#define LED_PIN_BLUE GPIO_NUM_22
+#define LED_PIN_GREEN GPIO_NUM_21
 
 void app_main(void)
 {
@@ -23,7 +25,7 @@ void app_main(void)
     }
     //Till hit.
 
-    ESP_ERROR_CHECK(gpio_reset_pin(LED_PIN));
-    ESP_ERROR_CHECK(gpio_set_direction(LED_PIN, GPIO_MODE_OUTPUT));
-    ESP_ERROR_CHECK(gpio_set_level(LED_PIN, 1));
+    ESP_ERROR_CHECK(gpio_reset_pin(LED_PIN_GREEN));
+    ESP_ERROR_CHECK(gpio_set_direction(LED_PIN_GREEN, GPIO_MODE_OUTPUT));
+    ESP_ERROR_CHECK(gpio_set_level(LED_PIN_GREEN, 0));
 }
