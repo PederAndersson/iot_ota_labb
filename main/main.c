@@ -1,12 +1,14 @@
 #include "driver/gpio.h"
 #include "esp_err.h"
 #include "esp_log.h"
+#include "hal/gpio_types.h"
 #include "ota_update.h"
 #include "wifi_connect.h"
 
 #define LED_PIN_RED GPIO_NUM_23
 #define LED_PIN_BLUE GPIO_NUM_22
 #define LED_PIN_GREEN GPIO_NUM_21
+#define ARR_SIZE sizeof(arr)/sizeof(arr[0])
 
 void app_main(void)
 {
@@ -27,5 +29,11 @@ void app_main(void)
 
     ESP_ERROR_CHECK(gpio_reset_pin(LED_PIN_GREEN));
     ESP_ERROR_CHECK(gpio_set_direction(LED_PIN_GREEN, GPIO_MODE_OUTPUT));
+    ESP_ERROR_CHECK(gpio_reset_pin(LED_PIN_RED));
+    ESP_ERROR_CHECK(gpio_set_direction(LED_PIN_RED, GPIO_MODE_OUTPUT));
+    ESP_ERROR_CHECK(gpio_reset_pin(LED_PIN_BLUE));
+    ESP_ERROR_CHECK(gpio_set_direction(LED_PIN_BLUE, GPIO_MODE_OUTPUT));
     ESP_ERROR_CHECK(gpio_set_level(LED_PIN_GREEN, 0));
+    ESP_ERROR_CHECK(gpio_set_level(LED_PIN_RED, 1));
+    ESP_ERROR_CHECK(gpio_set_level(LED_PIN_BLUE, 0));
 }
