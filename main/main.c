@@ -25,7 +25,8 @@ void app_main(void)
             ESP_LOGW("main", "Could not start OTA polling: %s", esp_err_to_name(ota_result));
         }
     }
-    //Till hit.
+    //Till hit. Viktigt glöm inte att sätta SSID och lösenord för skolans wifi
+    //med idf.py menuconfig innan ni laddar upp uppdateringen!
 
     ESP_ERROR_CHECK(gpio_reset_pin(LED_PIN_GREEN));
     ESP_ERROR_CHECK(gpio_set_direction(LED_PIN_GREEN, GPIO_MODE_OUTPUT));
@@ -33,7 +34,7 @@ void app_main(void)
     ESP_ERROR_CHECK(gpio_set_direction(LED_PIN_RED, GPIO_MODE_OUTPUT));
     ESP_ERROR_CHECK(gpio_reset_pin(LED_PIN_BLUE));
     ESP_ERROR_CHECK(gpio_set_direction(LED_PIN_BLUE, GPIO_MODE_OUTPUT));
-    ESP_ERROR_CHECK(gpio_set_level(LED_PIN_GREEN, 0));
-    ESP_ERROR_CHECK(gpio_set_level(LED_PIN_RED, 1));
+    ESP_ERROR_CHECK(gpio_set_level(LED_PIN_GREEN, 1));
+    ESP_ERROR_CHECK(gpio_set_level(LED_PIN_RED, 0));
     ESP_ERROR_CHECK(gpio_set_level(LED_PIN_BLUE, 0));
 }
